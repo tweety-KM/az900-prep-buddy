@@ -2,7 +2,7 @@
 
 > Built for the 1M Devs "Building Smarter Exam Prep Tools from Our Own Learning Journey" hackathon.
 
-**Live demo:** https://YOUR-USERNAME.github.io/az900-prep-buddy/
+**Live demo:** https://github.com/tweety-KM/az900-prep-buddy/
 
 **Disclaimer:** This is an unofficial study aid. It is not affiliated with or endorsed by Microsoft. All questions are original and written from the public AZ-900 skills outline on Microsoft Learn. No real exam questions or Microsoft logos are used.
 
