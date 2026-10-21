@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AZ-900 Prep Buddy (Unofficial)</title>
+<style>
+:root{--bg:#fff;--card:#f6fafa;--text:#14202b;--mute:#5b6b78;--teal:#0cb6bf;--tealD:#087f86;--mar:#8e1040;--ok:#16a34a;--bad:#dc2626;--line:#d6e4e6;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a20;--card:#17262e;--text:#e8f1f3;--mute:#9db1ba;--teal:#2ad0d9;--tealD:#2ad0d9;--mar:#ff7aa8;--line:#274049;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1a20;--card:#17262e;--text:#e8f1f3;--mute:#9db1ba;--teal:#2ad0d9;--tealD:#2ad0d9;--mar:#ff7aa8;--line:#274049;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 "Barlow",system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:18px 16px 40px}
+h1{margin:0;font-size:1.7rem;color:var(--tealD)}
+.tag{display:inline-block;font-size:.75rem;background:var(--mar);color:#fff;border-radius:99px;padding:2px 10px;margin-left:8px;vertical-align:middle}
+.sub{color:var(--mute);margin:4px 0 14px}
+nav{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+nav button,.btn{border:1px solid var(--line);background:var(--card);color:var(--text);padding:9px 14px;border-radius:10px;font:inherit;cursor:pointer}
+nav button.on,.btn.pri{background:var(--teal);color:#06242a;border-color:var(--teal);font-weight:600}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--teal)}
+.opt.ok{border-color:var(--ok);background:rgba(22,163,74,.15)}
+.opt.bad{border-color:var(--bad);background:rgba(220,38,38,.15)}
+.why{margin-top:12px;padding:12px;border-left:4px solid var(--teal);background:var(--bg);border-radius:6px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+select{font:inherit;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--text)}
+.fc{min-height:170px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:1.25rem;cursor:pointer;border:2px dashed var(--teal)}
+.bar{height:14px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--teal);transition:width .5s}
+.big{font-size:2.4rem;font-weight:700;color:var(--mar)}
+.mute{color:var(--mute);font-size:.9rem}
+footer{margin-top:24px;color:var(--mute);font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>AZ-900 Prep Buddy<span class="tag">Unofficial</span></h1>
+  <p class="sub">Practise, revise and track readiness. Original questions written from the public skills outline.</p>
+  <nav id="nav">
+    <button data-t="quiz" class="on">Quiz</button>
+    <button data-t="cards">Flashcards</button>
+    <button data-t="ready">Readiness</button>
+  </nav>
+  <div id="view"></div>
+  <footer>Not affiliated with or endorsed by Microsoft. Study aid only; always check Microsoft Learn for current exam content.</footer>
+</div>
+<script>
+var D=["Cloud concepts","Azure architecture and services","Management and governance"];
+var Q=[
+{d:0,q:"A startup stops buying servers and pays a monthly cloud bill instead. Which shift is this?",o:["OpEx to CapEx","CapEx to OpEx","Fixed cost to licensing","Private to hybrid"],a:1,e:"Buying hardware is capital expenditure (CapEx). Cloud billing is operational expenditure (OpEx): you pay as you consume, with no big upfront spend."},
+{d:0,q:"In an IaaS virtual machine, who is responsible for patching the guest operating system?",o:["Microsoft","The customer","Both equally, always","Nobody"],a:1,e:"With IaaS, the provider manages the physical hosts and network. The customer manages the OS, apps and data. PaaS and SaaS shift more of this to the provider."},
+{d:0,q:"A team wants to deploy web code without managing servers or operating systems. Which model fits best?",o:["IaaS","PaaS","On-premises","Colocation"],a:1,e:"PaaS gives you a managed platform for your code. The provider handles the OS and runtime, so you focus on the application."},
+{d:0,q:"A shop’s system automatically adds capacity on Black Friday and removes it afterwards. Which cloud benefit is this?",o:["Elasticity","Geo-distribution","Data sovereignty","Disaster recovery"],a:0,e:"Elasticity means resources scale out and in automatically with demand, so you only pay for what the workload needs."},
+{d:0,q:"A bank keeps sensitive data on its own servers but uses the cloud for seasonal spikes. Which model is this?",o:["Public cloud","Private cloud","Hybrid cloud","Multi-region"],a:2,e:"Hybrid cloud combines on-premises or private infrastructure with public cloud, letting you place each workload where it fits."},
+{d:1,q:"Which feature gives you physically separate datacenters inside one Azure region?",o:["Resource groups","Availability Zones","Management groups","Subscriptions"],a:1,e:"Availability Zones are separate locations within a region, each with independent power, cooling and networking, protecting you from a single datacenter failure."},
+{d:1,q:"Which Azure storage option is built for large amounts of unstructured data such as images and video?",o:["Azure Files","Queue Storage","Blob Storage","Table Storage"],a:2,e:"Blob Storage stores massive unstructured objects. Azure Files is for file shares, and Queue Storage is for messages."},
+{d:1,q:"You want small pieces of code to run only when an event happens, with no server management. What fits?",o:["Azure Functions","Azure Virtual Machines","Azure Bastion","Azure ExpressRoute"],a:0,e:"Azure Functions is serverless and event-driven. You pay for execution rather than for idle servers."},
+{d:1,q:"What is an Azure resource group?",o:["A billing contract","A logical container for related resources","A set of physical servers","A security password vault"],a:1,e:"A resource group holds related resources, such as a VM, disk and network, so you can manage, secure and delete them together."},
+{d:1,q:"Which service gives a private, dedicated connection between your network and Azure that does not use the public internet?",o:["VPN Gateway","Azure DNS","ExpressRoute","Load Balancer"],a:2,e:"ExpressRoute uses a private connection through a connectivity provider. A VPN Gateway encrypts traffic but still travels over the public internet."},
+{d:2,q:"Your company wants to ensure resources can only be created in approved regions. Which service enforces this?",o:["Azure Policy","Azure Advisor","Azure Monitor","Service Health"],a:0,e:"Azure Policy evaluates resources against rules, such as allowed locations, and can deny or flag non-compliant ones."},
+{d:2,q:"Which feature helps prevent a critical resource from being accidentally deleted?",o:["Tags","Resource lock","Budget alert","Availability set"],a:1,e:"A resource lock (CanNotDelete or ReadOnly) blocks accidental deletion or changes, even for users who have permission."},
+{d:2,q:"Requiring a password plus a phone approval when signing in is an example of what?",o:["Single sign-on","Multi-factor authentication","Role-based access","Encryption at rest"],a:1,e:"Multi-factor authentication adds a second proof of identity. Microsoft Entra ID supports it to reduce the risk of stolen passwords."},
+{d:2,q:"Which tool gives personalised recommendations to improve cost, security and reliability?",o:["Azure Advisor","Azure Arc","Azure Blueprints","Azure Lighthouse"],a:0,e:"Azure Advisor analyses your resources and recommends improvements across cost, security, reliability, performance and operational excellence."},
+{d:2,q:"Before deploying, you want to estimate the monthly cost of the services you plan to use. Which tool?",o:["Cost Management","Pricing calculator","Azure Monitor","Compliance Manager"],a:1,e:"The Pricing calculator estimates costs for planned services. Cost Management tracks and analyses what you actually spend."}
+];
+var G=[
+["Region","A geographic area containing one or more datacenters, such as South Africa North."],
+["Availability Zone","A physically separate datacenter location inside a region, for resilience."],
+["Resource group","A logical container for related Azure resources, managed as a unit."],
+["Subscription","A billing and access boundary that holds resource groups and resources."],
+["Management group","A level above subscriptions for applying policy and access across many of them."],
+["Azure Policy","Rules that audit or enforce standards on resources, such as allowed regions."],
+["RBAC","Role-based access control: permissions given by role at a chosen scope."],
+["Zero Trust","Security model: never trust, always verify, assume breach."],
+["Defense in depth","Layered security so one failure does not expose everything."],
+["Elasticity","Resources scale out and in automatically with demand."],
+["Azure Arc","Extends Azure management to on-premises and other clouds."],
+["Cost Management","Monitor, analyse and control your actual Azure spending."]
+];
+var S;
+try{S=JSON.parse(localStorage.getItem("az900")||"null")}catch(e){S=null}
+if(!S)S={last:{},box:{}};
+function save(){try{localStorage.setItem("az900",JSON.stringify(S))}catch(e){}}
+var tab="quiz",filter="all",cur=null,answered=false,card=null,flipped=false;
+var view=document.getElementById("view");
+document.getElementById("nav").onclick=function(e){var t=e.target.dataset.t;if(!t)return;tab=t;
+ [].forEach.call(this.children,function(b){b.className=b.dataset.t===t?"on":""});render()};
+function pickQ(){var pool=Q.map(function(x,i){return i}).filter(function(i){return filter==="all"||Q[i].d==filter});
+ var w=pool.filter(function(i){return S.last[i]!==1});
+ var src=(w.length&&Math.random()<.7)?w:pool;var n;do{n=src[Math.floor(Math.random()*src.length)]}while(src.length>1&&n===cur);cur=n;answered=false}
+function quiz(){
+ if(cur===null)pickQ();var q=Q[cur];
+ var h='<div class="row"><select id="f"><option value="all">All topics</option>'+D.map(function(x,i){return'<option value="'+i+'"'+(filter==i?" selected":"")+'>'+x+'</option>'}).join("")+'</select><span class="mute">Missed questions come up more often</span></div>';
+ h+='<div class="card"><div class="mute">'+D[q.d]+'</div><h3>'+q.q+'</h3>';
+ q.o.forEach(function(t,i){h+='<button class="opt" data-i="'+i+'">'+t+'</button>'});
+ h+='<div id="fb"></div></div>';view.innerHTML=h;
+ document.getElementById("f").onchange=function(){filter=this.value;cur=null;render()};
+ view.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){if(answered)return;answered=true;var i=+b.dataset.i,ok=i===q.a;
+  S.last[cur]=ok?1:0;save();
+  view.querySelectorAll(".opt").forEach(function(x,j){x.disabled=true;if(j===q.a)x.classList.add("ok");else if(j===i)x.classList.add("bad")});
+  document.getElementById("fb").innerHTML='<div class="why"><b>'+(ok?"Correct!":"Not quite.")+'</b> '+q.e+'</div><p><button class="btn pri" id="nx">Next question</button></p>';
+  document.getElementById("nx").onclick=function(){pickQ();render()}}});
+}
+function pool(){var p=G.map(function(g,i){return{id:"g"+i,f:g[0],b:g[1]}});
+ Q.forEach(function(q,i){if(S.last[i]===0)p.push({id:"q"+i,f:q.q,b:q.o[q.a]+". "+q.e,missed:1})});return p}
+function nextCard(){var p=pool();p.sort(function(a,b){return(S.box[a.id]||0)-(S.box[b.id]||0)+(Math.random()-.5)});
+ var top=p.slice(0,3);card=top[Math.floor(Math.random()*top.length)];flipped=false}
+function cards(){
+ if(!card||!pool().some(function(c){return c.id===card.id}))nextCard();
+ var h='<div class="mute" style="margin-bottom:8px">'+pool().filter(function(c){return c.missed}).length+' cards added from questions you missed</div>';
+ h+='<div class="card fc" id="c">'+(flipped?card.b:card.f)+'</div>';
+ h+=flipped?'<div class="row"><button class="btn" id="ag">Again</button><button class="btn pri" id="gt">Got it</button></div>':'<p class="mute" style="text-align:center">Tap the card to flip</p>';
+ view.innerHTML=h;
+ document.getElementById("c").onclick=function(){flipped=!flipped;render()};
+ if(flipped){document.getElementById("ag").onclick=function(){S.box[card.id]=0;save();nextCard();render()};
+  document.getElementById("gt").onclick=function(){S.box[card.id]=(S.box[card.id]||0)+1;save();nextCard();render()}}
+}
+function ready(){
+ var tot=0,right=0,h="";
+ D.forEach(function(name,d){var ids=Q.map(function(x,i){return i}).filter(function(i){return Q[i].d===d});
+  var a=ids.filter(function(i){return S.last[i]!==undefined}).length,r=ids.filter(function(i){return S.last[i]===1}).length;
+  tot+=ids.length;right+=r;var pct=Math.round(r/ids.length*100);
+  h+='<div class="card"><div class="row"><b>'+name+'</b><span>'+pct+'%</span></div><div class="bar"><i style="width:'+pct+'%"></i></div><div class="mute">'+a+' of '+ids.length+' attempted</div></div>'});
+ var all=Math.round(right/tot*100),msg=all>=80?"Looking strong. Try a full practice assessment on Microsoft Learn.":all>=70?"Close to the pass mark. Revise your weakest topic.":"Keep going. Focus on the lowest bar and use flashcards.";
+ var top='<div class="card"><div class="mute">Overall readiness</div><div class="big">'+all+'%</div><div>'+msg+'</div><div class="mute">Rough guide only: the real exam passes at 700 of 1000.</div></div>';
+ view.innerHTML=top+h+'<button class="btn" id="rs">Reset my progress</button>';
+ document.getElementById("rs").onclick=function(){if(confirm("Clear all progress?")){S={last:{},box:{}};save();render()}};
+}
+function render(){({quiz:quiz,cards:cards,ready:ready})[tab]()}
+render();
+</script>
+</body>
+</html>
