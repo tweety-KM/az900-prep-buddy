@@ -66,7 +66,7 @@ the common wrong choice is wrong. Do not reproduce real exam questions.
 
 ## Author
 
-**YOUR NAME**, 1M Devs learner. [LinkedIn](https://linkedin.com/in/YOUR-HANDLE) · [GitHub](https://github.com/YOUR-USERNAME)
+**Koketso Matobako**, 1M Devs learner. [LinkedIn](www.linkedin.com/in/koketso-matobako-2b15061a3) · [GitHub](https://github.com/tweety-KM/)
 
 ## Licence
 
