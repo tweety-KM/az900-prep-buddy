@@ -44,9 +44,35 @@ cd az900-prep-buddy
 
 ## AI tools and prompt engineering
 
-Built with Claude.ai for generating and refining the app and the question set.
+**Tool used:** Claude.ai, to plan the product, build the prototype and write the question set.
 
-Example prompt used:
+### Prompts I used
+1. **Kickoff prompt:** I pasted the full hackathon brief and the PLP pitch deck
+   template and asked: "Please assist in completing the following assignment."
+   Result: Claude chose to combine three challenges (Smart Quiz Builder,
+   Flashcard Coach, Readiness Tracker) into one prototype.
+2. **Follow-up prompts:** I asked for GitHub repo setup instructions, a README,
+   a demo video script and Canva slide content.
+
+### Prompt engineering techniques
+- **Role and audience:** "Act as an AZ-900 tutor for beginners in Africa."
+- **Constraints from the brief:** original questions only, based on the public
+  skills outline, no Microsoft logos, labelled unofficial.
+- **Structured output:** 4 options, one correct answer, and a 2-sentence
+  explanation of why it is right and why the common wrong choice is wrong.
+- **Topic coverage:** questions generated per skill area so each domain is covered.
+- **Iteration:** I reviewed the output and asked for fixes (add your real changes here).
+
+### Question-generation prompt (reusable)
+Act as an AZ-900 tutor. Using only the public skills outline on Microsoft Learn,
+write 5 original multiple-choice questions for [topic]. For each: 4 options,
+one correct answer, and a 2-sentence explanation of why it is right and why
+the common wrong choice is wrong. Do not reproduce real exam questions.
+
+### How I verified accuracy
+- [ ] Checked every question and explanation against Microsoft Learn
+- [ ] Corrected or removed anything I could not confirm
+- [ ] Tested the app on desktop and phone
 
 ```
 Act as an AZ-900 tutor. Using only the public skills outline on Microsoft Learn,
