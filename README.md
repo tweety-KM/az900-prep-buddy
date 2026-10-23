@@ -2,7 +2,7 @@
 
 > Built for the 1M Devs "Building Smarter Exam Prep Tools from Our Own Learning Journey" hackathon.
 
-**Live demo:** https://github.com/tweety-KM/az900-prep-buddy/
+**Live demo:** https://tweety-km.github.io/az900-prep-buddy/
 
 **Disclaimer:** This is an unofficial study aid. It is not affiliated with or endorsed by Microsoft. All questions are original and written from the public AZ-900 skills outline on Microsoft Learn. No real exam questions or Microsoft logos are used.
 
@@ -37,7 +37,7 @@ Questions you got wrong are shown more often in the quiz, so practice focuses on
 ## Run it locally
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/az900-prep-buddy.git
+git clone https://github.com/tweety-KM/az900-prep-buddy.git
 cd az900-prep-buddy
 # open index.html in your browser
 ```
@@ -66,7 +66,7 @@ the common wrong choice is wrong. Do not reproduce real exam questions.
 
 ## Author
 
-**Koketso Matobako**, 1M Devs learner. [LinkedIn](www.linkedin.com/in/koketso-matobako-2b15061a3) · [GitHub](https://github.com/tweety-KM/)
+**Koketso Matobako**, 1M Devs learner. [LinkedIn](https://www.linkedin.com/in/koketso-matobako-2b15061a3) · [GitHub](https://github.com/tweety-KM/)
 
 ## Licence
 
